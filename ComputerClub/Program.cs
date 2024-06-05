@@ -1,4 +1,6 @@
-﻿namespace ComputerClub
+﻿using System.Threading.Channels;
+
+namespace ComputerClub
 {
     internal class Program
     {
@@ -49,7 +51,7 @@
                 {
                     computerNumber -= 1;
 
-                    if (computerNumber > 0 && computerNumber <= _computers.Count)
+                    if (computerNumber >= 0 && computerNumber <= _computers.Count)
                     {
                         if (_computers[computerNumber].IsTaken)
                         {
@@ -58,7 +60,16 @@
                         }
                         else
                         {
-                            
+                            if (newClient.CheckSolvency(_computers[computerNumber]))
+                            {
+                                Console.WriteLine("Клиент оплатил и сел за компьютер " + (computerNumber + 1));
+                                _money += newClient.Pay();
+                                _computers[computerNumber].BecomeTaken(newClient);
+                            }
+                            else
+                            {
+                                Console.WriteLine("У клиента не хватило денег и он ушел.");
+                            }
                         }
                     }
                     else
@@ -72,8 +83,19 @@
                     CreateNewClients(1, new Random());
                     Console.WriteLine("Неверный ввод. Попробуйте снова!");
                 }
+
+                Console.WriteLine("Чтобы перейти к следующему клиенту нажмите любую клавишу...");
                 Console.ReadKey();
                 Console.Clear();
+                SpendOneMinute();
+            }
+        }
+
+        private void SpendOneMinute()
+        {
+            foreach (var _computer in _computers)
+            {
+                _computer.SpendOneMinute();
             }
         }
 
@@ -156,6 +178,12 @@
                     _moneyToPay = 0;
                     return false;
                 }
+            }
+
+            public int Pay()
+            {
+                _money -= _moneyToPay;
+                return _moneyToPay;
             }
         }
     }
