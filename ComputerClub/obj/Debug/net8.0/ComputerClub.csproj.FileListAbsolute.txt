@@ -1,0 +1,15 @@
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/bin/Debug/net8.0/ComputerClub
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/bin/Debug/net8.0/ComputerClub.deps.json
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/bin/Debug/net8.0/ComputerClub.runtimeconfig.json
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/bin/Debug/net8.0/ComputerClub.dll
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/bin/Debug/net8.0/ComputerClub.pdb
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.AssemblyInfoInputs.cache
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.AssemblyInfo.cs
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.csproj.CoreCompileInputs.cache
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.sourcelink.json
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.dll
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/refint/ComputerClub.dll
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.pdb
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ComputerClub.genruntimeconfig.cache
+/Users/vladislavgolosov/Desktop/C#/ComputerClub/ComputerClub/obj/Debug/net8.0/ref/ComputerClub.dll
