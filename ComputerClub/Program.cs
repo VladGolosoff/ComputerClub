@@ -43,7 +43,35 @@
                 Console.WriteLine($"Баланс компьютерного клуба: {_money} руб. Ждем нового клиента.");
                 Console.WriteLine($"У вас новый клиент, и он хочет купить {newClient.DesiredMinutes} минут");
                 ShowAllComputerState();
+                Console.Write("\nВы предлагаете ему компьютер под номером: ");
+                string userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out int computerNumber))
+                {
+                    computerNumber -= 1;
 
+                    if (computerNumber > 0 && computerNumber <= _computers.Count)
+                    {
+                        if (_computers[computerNumber].IsTaken)
+                        {
+                            Console.WriteLine("Вы пытаетесь посадить клиента за компьютер, который уже знаят." +
+                                              "Клиент разозлился и ушел");
+                        }
+                        else
+                        {
+                            
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Вы сами не знаете за какой компьютер посадить клиента." +
+                                          "Он разозлился и ушел");
+                    }
+                }
+                else
+                {
+                    CreateNewClients(1, new Random());
+                    Console.WriteLine("Неверный ввод. Попробуйте снова!");
+                }
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -106,12 +134,28 @@
     class Client
         {
             private int _money;
+            private int _moneyToPay;
             public int DesiredMinutes { get; private set; }
 
             public Client(int money, Random random)
             {
                 _money = money;
                 DesiredMinutes = random.Next(10, 30);
+            }
+
+            public bool CheckSolvency(Computer computer)
+            {
+                _moneyToPay = DesiredMinutes * computer.PricePerMinute;
+
+                if (_money >= _moneyToPay)
+                {
+                    return true;
+                }
+                else
+                {
+                    _moneyToPay = 0;
+                    return false;
+                }
             }
         }
     }
